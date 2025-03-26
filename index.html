@@ -2,19 +2,10 @@
 <html lang="pt">
 
 <head>
-    <!-- Definição de codificação (no topo para prioridade) -->
     <meta charset="UTF-8">
-    
-    <!-- Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Título da Página -->
     <title>Taca Phone - O Futuro na Sua Mão</title>
-    
-    <!-- Importação do CSS -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Importação do JavaScript -->
     <script defer src="script.js"></script>
 </head>
 
@@ -24,7 +15,7 @@
             <img src="https://raw.githubusercontent.com/s2Seraphin/Taca-company/refs/heads/main/FUQyjKY%20-%20Imgur.jpg"
                 alt="Taca Company Logo" class="logo">
         </div>
-        <h1 id="titulo">Taca Phone - O Futuro na Sua Mão</h1>
+        <h1><span id="typing"></span></h1>
         <p>O smartphone sustentável, seguro e poderoso que você sempre quis.</p>
         <a href="#recursos" class="btn">Saiba Mais</a>
     </header>
@@ -71,21 +62,21 @@
     <!-- Script de digitação corrigido -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const titulo = document.getElementById("titulo");
-            const texto = "Taca Phone - O Futuro na Sua Mão";
+            const typingElement = document.getElementById("typing");
+            const text = "Taca Phone - O Futuro na Sua Mão";
             let i = 0;
 
-            titulo.innerHTML = ""; // Limpa antes de começar
-
-            function digitar() {
-                if (i < texto.length) {
-                    titulo.innerHTML += texto.charAt(i);
+            function typeWriter() {
+                if (i < text.length) {
+                    typingElement.innerText = text.substring(0, i + 1);
                     i++;
-                    setTimeout(digitar, 100);
+                    setTimeout(typeWriter, 100);
                 }
             }
 
-            digitar();
+            // Inicia a animação de digitação
+            typingElement.innerText = ""; // Garante que começa vazio
+            typeWriter();
         });
     </script>
 </body>
