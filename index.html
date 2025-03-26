@@ -2,28 +2,29 @@
 <html lang="pt">
 
 <head>
-    <!-- Charset para garantir que caracteres especiais sejam exibidos corretamente -->
+    <!-- Definição de codificação (no topo para prioridade) -->
     <meta charset="UTF-8">
     
-    <!-- Tag viewport para garantir que o site seja responsivo e adaptável em dispositivos móveis -->
+    <!-- Responsividade -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Título da página -->
+    <!-- Título da Página -->
     <title>Taca Phone - O Futuro na Sua Mão</title>
     
-    <!-- Link para o arquivo CSS (verifique se o caminho está correto) -->
+    <!-- Importação do CSS -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Link para o arquivo JavaScript (verifique se o caminho está correto) -->
+    <!-- Importação do JavaScript -->
     <script defer src="script.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo-container">
             <img src="https://raw.githubusercontent.com/s2Seraphin/Taca-company/refs/heads/main/FUQyjKY%20-%20Imgur.jpg"
                 alt="Taca Company Logo" class="logo">
         </div>
-        <h1><span class="typing"></span></h1>
+        <h1 id="titulo">Taca Phone - O Futuro na Sua Mão</h1>
         <p>O smartphone sustentável, seguro e poderoso que você sempre quis.</p>
         <a href="#recursos" class="btn">Saiba Mais</a>
     </header>
@@ -53,7 +54,6 @@
     <section id="manual">
         <h2>📖 Manual do Usuário</h2>
         <p>Escaneie o QR Code abaixo para acessar todas as instruções do Taca Phone.</p>
-        <!-- Link do QR Code atualizado -->
         <img src="https://raw.githubusercontent.com/s2Seraphin/Taca-company/refs/heads/main/taca_phone_qr_code.png"
             alt="QR Code do Manual" class="qrcode">
     </section>
@@ -68,22 +68,24 @@
         <p>&copy; 2025 Taca Company. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Script de digitação corrigido -->
     <script>
-        // Animação de digitação no título
         document.addEventListener('DOMContentLoaded', () => {
-            const typingText = document.querySelector('.typing');
-            const text = "Taca Phone - O Futuro na Sua Mão";
+            const titulo = document.getElementById("titulo");
+            const texto = "Taca Phone - O Futuro na Sua Mão";
             let i = 0;
 
-            function typeWriter() {
-                if (i < text.length) {
-                    typingText.innerHTML += text.charAt(i);
+            titulo.innerHTML = ""; // Limpa antes de começar
+
+            function digitar() {
+                if (i < texto.length) {
+                    titulo.innerHTML += texto.charAt(i);
                     i++;
-                    setTimeout(typeWriter, 100); // Ajuste a velocidade da digitação
+                    setTimeout(digitar, 100);
                 }
             }
 
-            typeWriter();
+            digitar();
         });
     </script>
 </body>
